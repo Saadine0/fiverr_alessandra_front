@@ -1,12 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-import Minibar from './components/minibar';
+// import "./App.css";
+import MenuMinibar from "./components/menu_article_minibar/MenuMinibar";
+
 function App() {
   return (
-    <div>
-       <Minibar/>
-    </div>
-     
+    <MenuMinibar />
+    /* <Minibar/> */
   );
 }
 
