@@ -3,11 +3,13 @@ import ReactDOM from "react-dom";
 import ClientHotel from "./components/client_hotel_mb/ClientHotel";
 import MenuMinibar from "./components/menu_article_minibar/MenuMinibar";
 import Checkout from "./components/sub_mb_components/Checkout";
+import FicheFonction from "./components/FicheDeFonction/FicheFonction";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+      <Route path="/FicheFonction" element={<FicheFonction />} />
         <Route path="/ClientHotel" element={<ClientHotel />} />
         <Route path="/MenuMinibar" element={<MenuMinibar />} />
         <Route

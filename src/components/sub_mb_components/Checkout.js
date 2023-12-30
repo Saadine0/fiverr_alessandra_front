@@ -12,6 +12,7 @@ import { BsCheckSquareFill } from "react-icons/bs";
 import { BsFillPinAngleFill } from "react-icons/bs";
 import { FaCheck } from "react-icons/fa";
 import { ImExit } from "react-icons/im";
+import { Link } from 'react-router-dom';
 
 class Checkout extends Component {
   constructor(props) {
@@ -34,15 +35,13 @@ class Checkout extends Component {
   }
 
   fetchData = () => {
-      axios
+    axios
       .get("http://localhost:9000/checkoutPresent")
       .then((response) => {
         // Save the fetched data to state
-        this.setState(
-          {
-            data: response.data,
-          },
-        );
+        this.setState({
+          data: response.data,
+        });
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -77,9 +76,8 @@ class Checkout extends Component {
     ));
   }
   renderTableRows1() {
-
     return this.state.data.map((elm, index) => {
-        let rowClassName = '';
+      let rowClassName = "";
 
       switch (elm.TypeDeModification.toLowerCase()) {
         case "annulé":
@@ -107,11 +105,9 @@ class Checkout extends Component {
           <td className="px-6 py-4 rounded-r-lg text-xs">{elm.Utilisateur}</td>
         </tr>
       );
-    }); 
+    });
   }
-  
 
- 
   render() {
     const data = this.state.data;
 
@@ -333,15 +329,14 @@ class Checkout extends Component {
           </div>
         </div>
         <div className=" pt-2 flex justify-between">
-          <button
-            type="button"
-            data-bs-toggle="modal"
+          <Link
+            to="/MenuMinibar"
             className="bg-sky-700 text-white mb-3 px-2 py-1 rounded"
           >
-            <div class="flex flex-row items-center justify-between w-full space-x-1 p-1">
+            <div className="flex flex-row items-center justify-between w-full space-x-1 p-1">
               <span>Menu Article Minibar</span>
             </div>
-          </button>
+          </Link>
 
           <button
             onClick={() => this.setState({ Display: !this.state.Display })}
