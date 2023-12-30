@@ -1,10 +1,29 @@
 {
-  "articles": [
+  "articles": [],
+  "articlesToRoom": [
     {
       "name": "Coca-cola",
-      "description": "Boissons",
-      "price": "99",
-      "id": 2
+      "nombre": "22",
+      "facturaction": "Sur chambre",
+      "id": 13
+    },
+    {
+      "name": "Option 2",
+      "nombre": "77",
+      "facturaction": "Sur chambre",
+      "id": 14
+    },
+    {
+      "name": "Coca-cola",
+      "nombre": "55",
+      "facturaction": "Offert",
+      "id": 15
+    },
+    {
+      "name": "Option 3",
+      "nombre": "3",
+      "facturaction": "Sur chambre",
+      "id": 16
     }
   ]
 }

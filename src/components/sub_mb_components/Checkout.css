@@ -1,0 +1,111 @@
+/* Checkout.css */
+.relative {
+    overflow-x: auto;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-container button {
+    flex: 1; /* Use flex property instead of width */
+}
+
+.table-container {
+    overflow-x: auto;
+    max-height: 400px; /* Set a maximum height for the table container */
+    overflow-y: auto;
+    border: #0F4C92;
+}
+
+.table-container::-webkit-scrollbar {
+    width: 12px; /* Set the width of the scrollbar */
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #848484; /* Set the color of the scrollbar thumb */
+    border-radius: 6px; /* Set the border-radius of the scrollbar thumb */
+}
+
+.table-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Set the color of the scrollbar track */
+}
+
+/* Add custom styles for the Checkout button */
+.checkout-button {
+    /* Apply your desired styles here */
+    position: fixed; /* Set the position to fixed */
+    top: 10px; /* Adjust the distance from the top */
+    right: 120px; /* Adjust the distance from the right */
+    background-color: #0F4C92; /* Change the background color for Checkout */
+    color: #ffffff; /* Change the text color */
+    text-decoration: none; /* Remove default link underline */
+    font-weight: bold; /* Adjust font weight */
+    padding: 8px 16px; /* Adjust padding for better appearance */
+    border-radius: 4px; /* Apply border-radius for rounded corners */
+}
+
+/* Add hover styles for better user interaction */
+.checkout-button:hover {
+    background-color: #2980b9; /* Change background color on hover */
+    color: #ffffff; /* Change text color on hover */
+}
+
+/* Add custom styles for the Present button */
+.present-button {
+    /* Apply your desired styles here */
+    position: fixed; /* Set the position to fixed */
+    top: 10px; /* Adjust the distance from the top */
+    right: 10px; /* Adjust the distance from the right */
+    background-color: #99D98E; /* Change the background color for Present */
+    color: #ffffff; /* Change the text color */
+    text-decoration: none; /* Remove default link underline */
+    font-weight: bold; /* Adjust font weight */
+    padding: 8px 16px; /* Adjust padding for better appearance */
+    border-radius: 4px; /* Apply border-radius for rounded corners */
+}
+
+/* Add hover styles for better user interaction */
+.present-button:hover {
+    background-color: #27ae60; /* Change background color on hover */
+    color: #ffffff; /* Change text color on hover */
+}
+
+
+.historique-button {
+    /* Apply your desired styles here */
+    position: fixed; /* Set the position to fixed */
+    top: 0px; /* Adjust the distance from the top */
+    right: 10px; /* Adjust the distance from the right */
+    background-color: #ffffff; /* Change the background color */
+    color: #000000; /* Change the text color */
+    text-decoration: none; /* Remove default link underline */
+    font-weight: bold; /* Adjust font weight */
+    padding: 8px 16px; /* Adjust padding for better appearance */
+    border-radius: 4px; /* Apply border-radius for rounded corners */
+}
+
+/* Add hover styles for better user interaction */
+.historique-button:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+    color: #000000; /* Change text color on hover */
+}
+
+.historique-content {
+    display: flex;
+    align-items: center;
+    /* Add other styles as needed */
+}
+
+/* Add hover styles for better user interaction */
+.historique-button:hover {
+    background-color: #ffffff; /* Change background color on hover */
+    color: #000000; /* Change text color on hover */
+}
+/* Add custom styles for the three points */
+

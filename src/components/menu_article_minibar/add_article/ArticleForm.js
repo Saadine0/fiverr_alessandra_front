@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
@@ -29,7 +32,7 @@ export default class ArticleForm extends Component {
       articlePrice
     );
     axios
-      .post("http://localhost:9000/articles", newArticle)
+      .post("http://localhost:9003/articles", newArticle)
       .then((response) => {
         console.log("Article Added Successfully : " + response.status);
         this.setState((prevState) => ({
@@ -53,7 +56,7 @@ export default class ArticleForm extends Component {
         className="flex flex-row items-start justify-between pt-8 px-12   bg-white rounded-br rounded-bl"
       >
         <div className="flex flex-col w-2/4  mr-20">
-          <h4 className="text-blue-800 font-medium">
+          <h4 className="text-sky-700 font-medium">
             Ajouter un nouvel article
           </h4>
           <hr className="w-full mb-6" />
@@ -67,7 +70,7 @@ export default class ArticleForm extends Component {
                 name="articleName"
                 value={this.state.articleName}
                 onChange={this.handleInputChange}
-                className="border rounded focus-within:outline-none focus-v:shadow-2xl pl-2 py-1"
+                className="border  rounded focus-within:outline-none focus-v:shadow-2xl pl-2 py-1"
                 type="text"
               />
             </div>
@@ -98,7 +101,7 @@ export default class ArticleForm extends Component {
           </div>
           <button
             onClick={this.handleAddArticle}
-            className={`bg-blue-800 rounded py-3 text-white ${
+            className={`bg-sky-700 rounded py-3 text-white ${
               !this.state.articleName ||
               !this.state.articleDescription ||
               !this.state.articlePrice
@@ -107,6 +110,7 @@ export default class ArticleForm extends Component {
             } `}
           >
             Ajouter un article
+            <FontAwesomeIcon className="ml-2" size="lg" icon={faCirclePlus} />
           </button>
         </div>
         <ArticleList newArticle={this.state.newArticle} />
