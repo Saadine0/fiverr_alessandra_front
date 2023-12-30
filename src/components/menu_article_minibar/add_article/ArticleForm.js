@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
@@ -67,7 +70,7 @@ export default class ArticleForm extends Component {
                 name="articleName"
                 value={this.state.articleName}
                 onChange={this.handleInputChange}
-                className="border rounded focus-within:outline-none focus-v:shadow-2xl pl-2 py-1"
+                className="border  rounded focus-within:outline-none focus-v:shadow-2xl pl-2 py-1"
                 type="text"
               />
             </div>
@@ -107,6 +110,7 @@ export default class ArticleForm extends Component {
             } `}
           >
             Ajouter un article
+            <FontAwesomeIcon className="ml-2" size="lg" icon={faCirclePlus} />
           </button>
         </div>
         <ArticleList newArticle={this.state.newArticle} />

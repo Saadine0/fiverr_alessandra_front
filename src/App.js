@@ -1,9 +1,10 @@
+import FicheFonction from "./components/fiche_fonction/FicheFonction";
 // import "./App.css";
-import MenuMinibar from "./components/menu_article_minibar/MenuMinibar";
-
 function App() {
   return (
-    <MenuMinibar />
+    <FicheFonction />
+    // <ClientHotel />
+    // <MenuMinibar />
     /* <Minibar/> */
   );
 }

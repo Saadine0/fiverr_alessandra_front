@@ -10,16 +10,15 @@ export default class UpdateArticle extends Component {
       articleName: "",
       articleDescription: "",
       articlePrice: "",
-      errorMsg: null,
     };
   }
 
-  componentDidMount() {
-    if (this.props.index) {
-      console.log("Props in UpdateArticle:", this.props.index);
-      // Other logic related to props.article if needed
-    }
-  }
+  // componentDidMount() {
+  //   if (this.props.index) {
+  //     console.log("Props in UpdateArticle:", this.props.index);
+  //     // Other logic related to props.article if needed
+  //   }
+  // }
 
   componentDidUpdate(prevProps) {
     if (prevProps.index !== this.props.index) {
@@ -41,25 +40,16 @@ export default class UpdateArticle extends Component {
   updateArticle = () => {
     const { index, updateArticleInList } = this.props;
     const { articleName, articleDescription, articlePrice } = this.state;
-    if (!articleName || !articleDescription || articlePrice === null) {
-      console.error("Veuillez remplir tous les champs");
-      this.setState({
-        errorMsg: "Veuillez remplir tous les champs",
-      });
-      return;
-    }
 
     const updatedArticle = new Article(
       articleName,
       articleDescription,
       articlePrice
     );
-
     // Update the article using Axios
     axios
       .put(`http://localhost:9000/articles/${index}`, updatedArticle)
       .then((response) => {
-        // Call the parent's function to update the list
         updateArticleInList(index - 1, response.data);
       })
       .catch((error) => {
@@ -126,9 +116,6 @@ export default class UpdateArticle extends Component {
                     type="number"
                   />
                 </div>
-              </div>
-              <div className="text-red-500 text-lg mb-6">
-                {this.state.errorMsg}
               </div>
               <button
                 onClick={this.updateArticle}

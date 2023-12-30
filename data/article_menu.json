@@ -1,10 +1,102 @@
 {
   "articles": [
     {
-      "name": "Coca-cola",
+      "name": "Coca-cola updated",
+      "description": "Boissons  kkkk",
+      "price": "55",
+      "id": 1
+    },
+    {
+      "name": "zs  hh ",
       "description": "Boissons",
-      "price": "99",
-      "id": 2
+      "price": "55",
+      "id": 3
+    }
+  ],
+  "articlesToRoom": [
+    {
+      "name": "Coca-cola;Fanta",
+      "nombre": 2,
+      "facturaction": "En attente",
+      "id": 1
+    },
+    {
+      "name": "Coca-cola;Fanta",
+      "nombre": 2,
+      "facturaction": "Offert",
+      "id": 3
+    },
+    {
+      "name": "Coca-cola;Fanta",
+      "nombre": 2,
+      "facturaction": "Offert",
+      "id": 4
+    },
+    {
+      "name": "Coca-cola;Fanta",
+      "nombre": 2,
+      "facturaction": "Offert",
+      "id": 5
+    },
+    {
+      "name": "Coca-cola;Fanta",
+      "nombre": 2,
+      "facturaction": "Offert",
+      "id": 6
+    },
+    {
+      "name": "Coca-cola;Fanta",
+      "nombre": 2,
+      "facturaction": "Offert",
+      "id": 7
+    },
+    {
+      "name": "Coca-cola;Fanta",
+      "nombre": 2,
+      "facturaction": "Offert",
+      "id": 8
+    },
+    {
+      "name": "Coca-cola;Fanta",
+      "nombre": 2,
+      "facturaction": "Offert",
+      "id": 9
+    },
+    {
+      "name": "Coca-cola;Fanta",
+      "nombre": 2,
+      "facturaction": "Offert",
+      "id": 11
+    },
+    {
+      "name": "Coca-cola;Fanta",
+      "nombre": 2,
+      "facturaction": "Offert",
+      "id": 12
+    },
+    {
+      "name": "Coca-cola",
+      "nombre": "22",
+      "facturaction": "Sur chambre",
+      "id": 13
+    },
+    {
+      "name": "Option 2",
+      "nombre": "77",
+      "facturaction": "Sur chambre",
+      "id": 14
+    },
+    {
+      "name": "Coca-cola",
+      "nombre": "55",
+      "facturaction": "Offert",
+      "id": 15
+    },
+    {
+      "name": "Coca-cola",
+      "nombre": "258",
+      "facturaction": "Sur chambre",
+      "id": 16
     }
   ]
 }
