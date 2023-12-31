@@ -76,7 +76,35 @@ class Checkout extends Component {
     ));
   }
   renderTableRows1() {
-    return this.state.data.map((elm, index) => {
+    const { selectedType, selectedUtilisateur, selectedChambre, fromDate, toDate } = this.state;
+    const data = this.state.data;
+    let filteredData = data;
+    
+    // Apply filters if values are selected in dropdowns
+    if (selectedType || selectedUtilisateur || selectedChambre || (fromDate && toDate)) {
+        filteredData = data.filter((item) => {
+            if (selectedType && item.TypeDeModification !== selectedType) {
+                return false;
+            }
+            if (selectedUtilisateur && item.Utilisateur !== selectedUtilisateur) {
+                return false;
+            }
+            if (selectedChambre && item.Chambre !== selectedChambre) {
+                return false;
+            }
+            if (fromDate && toDate) {
+                const itemDate = new Date(item.Date);
+                const from = new Date(fromDate);
+                const to = new Date(toDate);
+
+                if (itemDate < from || itemDate > to) {
+                    return false;
+                }
+            }
+        return true;
+    });}
+
+    return filteredData.map((elm, index) => {
       let rowClassName = "";
 
       switch (elm.TypeDeModification.toLowerCase()) {
@@ -111,12 +139,8 @@ class Checkout extends Component {
   render() {
     const data = this.state.data;
 
-    const uniqueTypes = [
-      ...new Set(data.map((item) => item.TypeDeModification)),
-    ];
-    const uniqueUtilisateurs = [
-      ...new Set(data.map((item) => item.Utilisateur)),
-    ];
+    const uniqueTypes = [...new Set(data.map((item) => item.TypeDeModification))];
+    const uniqueUtilisateurs = [...new Set(data.map((item) => item.Utilisateur))];
     const uniqueChambres = [...new Set(data.map((item) => item.Chambre))];
     const uniqueDates = [...new Set(data.map((item) => item.Date))];
 
@@ -169,13 +193,13 @@ class Checkout extends Component {
               <div class="align-items-end  flex flex-row">
                 <select
                   id="typeSelect"
-                  value={this.state.selectedTypeDeModification}
+                  className="my-1 p-2 border rounded-md mr-2 w-40 text-xs"
                   onChange={(e) =>
                     this.setState({
-                      selectedTypeDeModification: e.target.value,
+                      selectedType: e.target.value,
                     })
                   }
-                  className="my-1 p-2 border rounded-md mr-2 w-40 text-xs"
+                  value={this.state.selectedTypeDeModification} 
                 >
                   <option value="" disabled selected>
                     Type de modification
@@ -198,9 +222,9 @@ class Checkout extends Component {
                   <option value="" disabled selected>
                     Utilisateur
                   </option>
-                  {uniqueUtilisateurs.map((type, index) => (
-                    <option key={index} value={type}>
-                      {type}
+                  {uniqueUtilisateurs.map((utilisateur, index) => (
+                    <option key={index} value={utilisateur}>
+                      {utilisateur}
                     </option>
                   ))}
                 </select>
@@ -216,16 +240,16 @@ class Checkout extends Component {
                   <option value="" disabled selected>
                     Chambre
                   </option>
-                  {uniqueChambres.map((type, index) => (
-                    <option key={index} value={type}>
-                      {type}
+                  {uniqueChambres.map((chambre, index) => (
+                    <option key={chambre} value={chambre}>
+                      {chambre}
                     </option>
                   ))}
                 </select>
 
                 <button
                   type="button"
-                  onClick={this.fetchData}
+                 
                   class="h-8 px-4 m-2 text-lg text-indigo-100 transition-colors duration-150 bg-sky-700 rounded-lg focus:shadow-outline hover:bg-sky-700"
                 >
                   <FaFilter />
